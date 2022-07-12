@@ -1,6 +1,7 @@
 package application.test;
 
 import boardgame.Board;
+import boardgame.BoardException;
 import boardgame.Position;
 import org.junit.Test;
 
@@ -23,5 +24,10 @@ public class ProgramTest {
 
         assertThat(board.getRows(),equalTo(8));
         assertThat(board.getColumns(),equalTo(8));
+    }
+
+    @Test(expected = BoardException.class)
+    public void testingBoardException(){
+        Board board = new Board(0,0);
     }
 }
